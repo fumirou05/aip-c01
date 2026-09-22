@@ -1,0 +1,31 @@
+{
+  "tools": [
+    {
+      "name": "search_policy",
+      "description": "Search approved policy documents visible to the caller",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string", "minLength": 1, "maxLength": 500},
+          "caller_role": {"type": "string", "enum": ["customer", "employee", "supervisor"]}
+        },
+        "required": ["query", "caller_role"],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "create_ticket",
+      "description": "Create a support ticket after validation and authorization",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "summary": {"type": "string", "minLength": 1, "maxLength": 300},
+          "severity": {"type": "string", "enum": ["normal", "urgent"]},
+          "requires_approval": {"type": "boolean"}
+        },
+        "required": ["summary", "severity", "requires_approval"],
+        "additionalProperties": false
+      }
+    }
+  ]
+}

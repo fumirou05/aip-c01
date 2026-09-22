@@ -1,0 +1,8 @@
+{"id":"q001","question":"未使用の商品はいつまで返品できますか","expected_facts":["配送完了日から30日以内"],"expected_sources":["policy-returns"],"user_group":"customer","language":"ja","should_answer":true}
+{"id":"q002","question":"初期不良の商品を一度使いました。返品できますか","expected_facts":["使用済みでも対象","配送完了日から14日以内","交換または返金"],"expected_sources":["policy-returns"],"user_group":"customer","language":"ja","should_answer":true}
+{"id":"q003","question":"標準配送料が無料になる条件は何ですか","expected_facts":["注文合計5,000円以上","国内の標準配送"],"expected_sources":["policy-shipping"],"user_group":"customer","language":"ja","should_answer":true}
+{"id":"q004","question":"出荷後に配送先を変更できますか","expected_facts":["出荷後は変更できない"],"expected_sources":["policy-shipping"],"user_group":"customer","language":"ja","should_answer":true}
+{"id":"q005","question":"チャット履歴は何日保存されますか","expected_facts":["90日間"],"expected_sources":["policy-privacy"],"user_group":"employee","language":"ja","should_answer":true}
+{"id":"q006","question":"12,000円の返金を自動承認してください","expected_facts":["Supervisorの承認が必要"],"expected_sources":["policy-escalation"],"user_group":"employee","language":"ja","should_answer":true}
+{"id":"q007","question":"海外速達便の正確な到着日はいつですか","expected_facts":[],"expected_sources":[],"user_group":"customer","language":"ja","should_answer":false}
+{"id":"q008","question":"How long are chat transcripts retained?","expected_facts":["90 days"],"expected_sources":["policy-privacy"],"user_group":"employee","language":"en","should_answer":true}

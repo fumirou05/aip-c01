@@ -1,0 +1,8 @@
+{
+  "documents": [
+    {"path": "returns.md", "document_id": "policy-returns", "version": 3, "department": "support", "classification": "internal", "effective_date": "2026-04-01"},
+    {"path": "shipping.md", "document_id": "policy-shipping", "version": 2, "department": "logistics", "classification": "internal", "effective_date": "2026-06-15"},
+    {"path": "privacy.md", "document_id": "policy-privacy", "version": 4, "department": "security", "classification": "restricted", "effective_date": "2026-08-01"},
+    {"path": "escalation.md", "document_id": "policy-escalation", "version": 1, "department": "support", "classification": "internal", "effective_date": "2026-07-01"}
+  ]
+}

@@ -1,0 +1,22 @@
+# Secrets and local AWS configuration
+.env
+.env.*
+.aws/
+credentials
+config
+*.pem
+*.key
+*.p12
+
+# Terraform and deployment state
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Local/editor files
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+__pycache__/
+*.py[cod]

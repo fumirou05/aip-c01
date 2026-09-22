@@ -1,0 +1,9 @@
+{
+  "scenarios": [
+    {"id":"f001","symptom":"長い質問だけ回答が途中で切れる","signals":{"finish_reason":"length","input_tokens":7800,"context_limit":8000},"root_cause":"context_overflow"},
+    {"id":"f002","symptom":"更新済みの返品期限が古いまま回答される","signals":{"document_version":2,"manifest_version":3,"last_sync":"2026-03-01"},"root_cause":"stale_index"},
+    {"id":"f003","symptom":"一部のRequestが429で失敗する","signals":{"status":429,"retry_after_ms":500,"attempt":1},"root_cause":"throttling"},
+    {"id":"f004","symptom":"CustomerがRestricted文書を検索できる","signals":{"role":"customer","classification":"restricted","filter_applied":false},"root_cause":"metadata_filter_missing"},
+    {"id":"f005","symptom":"JSON出力が新しいPrompt版だけSchema検証に失敗する","signals":{"prompt_version":"v2","required_field":"source_ids","field_present":false},"root_cause":"prompt_schema_drift"}
+  ]
+}
