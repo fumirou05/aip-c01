@@ -1,10 +1,10 @@
 # AIP-C01 教科書
 
-AWS公式資料の内容を、AIP-C01の学習順に読みやすい日本語で整理する。学習計画と実行タスクから抽出した目次に沿って、literal／supplimentalのページペアを順次作成する。
+AWS公式資料の内容を、AIP-C01の学習順に読みやすい日本語で整理する。学習計画と実行タスクから抽出したliteral／supplimentalのページペアに加え、同じ範囲をサービス単位で体系化する。
 
-最終抽出日: 2026-09-21
+最終抽出日: 2026-09-22
 
-作成状況: 22ページペア中9ペアを作成・レビュー済み（PREP-01、PREP-02、D1-01〜D1-06、D2-02）。Domain 1の6ページペアは横断監査済み。
+作成状況: 22ページペア中9ペアを作成・レビュー済み（PREP-01、PREP-02、D1-01〜D1-06、D2-02）。Domain 1の6ページペアは横断監査済み。サービス別は33ページの目次を作成済み、本文は未作成。
 
 ## 2種類のページ
 
@@ -17,6 +17,14 @@ AWS公式資料の内容を、AIP-C01の学習順に読みやすい日本語で�
 
 `supplimental` は既存の疑問に答えるFAQではない。対応するliteral pageとTask・Skillを先に定め、その内容について、試験のシナリオから要件を読み取り、方式を選び、他の選択肢を除外できるようにするための補助教材とする。学びログや間違い記録は復習や改善には利用できるが、補足章の収録範囲を決める根拠にはしない。
 
+## サービス別の学習軸
+
+[`service-pages/`](service-pages/README.md)は、Task・Skill別の2種類のページと競合する第3の本文分類ではなく、同じ試験範囲をAWSサービス別に引き直す学習軸である。公式In-Scopeのサービス／機能をA（中核）、B（重要）、C（関連）に分け、各サービスの主要機能をサブ目次として整理している。
+
+- Taskの定義・Skillを確認する: [`literal-pages/`](literal-pages/README.md)
+- 要件からの選択と除外理由を学ぶ: [`supplimental-pages/`](supplimental-pages/README.md)
+- 1サービスの機能全体と連携関係を学ぶ: [`service-pages/`](service-pages/README.md)
+
 ## 目次の範囲
 
 - 準備: 試験範囲、対象サービス、学習時のAWS利用
@@ -26,6 +34,7 @@ AWS公式資料の内容を、AIP-C01の学習順に読みやすい日本語で�
 - Domain 4: 3 Task、16 Skills
 - Domain 5: 2 Task、14 Skills
 - 補足: 上記22ページと対応し、試験で必要な比較・判断・適用を補助する22ページ
+- サービス別: 公式In-Scope 106項目をA（中核）13ページ、B（重要）13ページ、C（関連）7ページへ整理する33ページ
 
 本編20 Task・98 Skillsは [`docs/tasks/`](../docs/tasks/README.md) と一対一で追跡できるようにする。目次にないテーマは、試験ガイドの対象か、既存タスクの完了に必要かを確認してから追加する。
 
@@ -33,8 +42,9 @@ AWS公式資料の内容を、AIP-C01の学習順に読みやすい日本語で�
 
 1. [`literal-pages` の目次](literal-pages/README.md)から対象Taskの公式内容を読む
 2. 分かりにくい概念や選定理由を[`supplimental-pages` の目次](supplimental-pages/README.md)で補う
-3. [`docs/tasks/`](../docs/tasks/README.md)で演習し、結果を[`docs/notes/`](../docs/notes/README.md)へ残す
-4. 判断を誤った箇所を[`questions/mistake-log.md`](../questions/mistake-log.md)へ記録する
+3. 関係するAWSサービスの機能全体を[`service-pages` の目次](service-pages/README.md)から確認する
+4. [`docs/tasks/`](../docs/tasks/README.md)で演習し、結果を[`docs/notes/`](../docs/notes/README.md)へ残す
+5. 判断を誤った箇所を[`questions/mistake-log.md`](../questions/mistake-log.md)へ記録する
 
 ## 本文を追加するときの共通ルール
 
@@ -72,5 +82,6 @@ AWS公式資料の内容を、AIP-C01の学習順に読みやすい日本語で�
 - [`.codex/agents/`](../.codex/agents/): Codexから選択できるプロジェクト固有のカスタムエージェント
 - [`templates/literal-page.md`](templates/literal-page.md): literal pageのひな形
 - [`templates/supplimental-page.md`](templates/supplimental-page.md): supplimental pageのひな形
+- [`templates/service-page.md`](templates/service-page.md): サービスページのひな形
 
 テンプレートは必須項目の漏れを防ぐための出発点であり、見出しの順序や数を厳密に揃えることより、内容に合った分かりやすい構成を優先する。

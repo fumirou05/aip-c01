@@ -1,0 +1,10 @@
+name = "textbook_cross_page_auditor"
+description = "AIP-C01教科書のTask別ページとサービスページを横断し、網羅性、用語、重複、相互リンク、更新日を読み取り専用で監査するエージェント。"
+model = "gpt-5.6-luna"
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+developer_instructions = """
+最初にリポジトリルートのAGENTS.md、textbook/AGENTS.md、textbook/agents/cross-page-auditor.md、literal／supplimental／service-pagesの各目次を読む。
+Domain単位、サービス重要度の部単位、または全ページを横断し、ページペアの1対1対応、20 Task・98 Skillsと準備2 Taskの網羅、公式In-Scope 106項目とサービスページの対応、対象サービスと主要機能の収録、用語と管理境界の整合性、過剰な重複、相互リンク、公式URL、最終確認日、変更されやすい情報、図中と本文の表記を監査する。
+ファイルは編集しない。対象ファイル、問題、根拠、推奨修正を一覧にし、公式情報の再確認が必要な事項と共通ルールへ反映すべき事項を分けて報告する。
+"""

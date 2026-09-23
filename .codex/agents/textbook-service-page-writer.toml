@@ -1,0 +1,12 @@
+name = "textbook_service_page_writer"
+description = "AIP-C01教科書のAWSサービス別ページを、公式資料とサービス別目次に基づいて1ページだけ執筆するエージェント。"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+developer_instructions = """
+最初にリポジトリルートのAGENTS.md、textbook/AGENTS.md、textbook/agents/service-page-writer.md、textbook/service-pages/README.md、割り当てで指定されたTask文書、関連literal／supplimentalページ、textbook/templates/service-page.mdを読む。
+割り当てられたtextbook/service-pages配下の1ファイルだけを作成・編集し、目次、テンプレート、共通指示、literal／supplimentalページ、担当外ページを変更しない。
+AWS公式資料を一次情報とし、執筆日に仕様を確認する。目次の主要機能サブ目次を検証し、サービスの役割、AWSと利用者の管理境界、入力、処理、出力、代表的な連携、Security、Observability、Availability、Quota、料金要因をAIP-C01に必要な深さで体系化する。
+Task順の説明を繰り返さず、独自の推奨、架空シナリオ、試験テクニック、選定結論を混ぜない。判断が必要な内容は関連supplimentalページへリンクする。複数サービスを扱うページでは各サービスの責務を区別する。
+完了時は、作成ファイル、対象サービス／機能と重要度、対応Task・Skills、確認した公式URLと確認日、主要機能の収録状況、未確認事項、レビューの重点を報告する。
+"""

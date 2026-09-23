@@ -12,7 +12,7 @@ AWS Certified Generative AI Developer - Professional（AIP-C01）の公式範囲
 
 1. AWS公式情報への忠実さと試験範囲の正確さ
 2. 読者が概念の関係と選定理由を理解できること
-3. literalとsupplimentalの役割を混同しないこと
+3. literal、supplimental、service pageの役割を混同しないこと
 4. ほかのページとの用語・前提・リンクの整合性
 5. テンプレートとの形式的一致
 
@@ -23,9 +23,10 @@ AWS Certified Generative AI Developer - Professional（AIP-C01）の公式範囲
 1. リポジトリルートの[`README.md`](../README.md)
 2. [`docs/study-plan.md`](../docs/study-plan.md)
 3. [`textbook/README.md`](README.md)
-4. [`literal-pages/README.md`](literal-pages/README.md)と[`supplimental-pages/README.md`](supplimental-pages/README.md)
+4. [`literal-pages/README.md`](literal-pages/README.md)、[`supplimental-pages/README.md`](supplimental-pages/README.md)、[`service-pages/README.md`](service-pages/README.md)
 5. 自分に割り当てられたTaskがある`docs/tasks/`の文書
-6. [`docs/links/official.md`](../docs/links/official.md)と、割り当てで指定されたAWS公式資料
+6. 割り当てに関係する既存のliteral／supplimental／service page
+7. [`docs/links/official.md`](../docs/links/official.md)と、割り当てで指定されたAWS公式資料
 
 既存の`docs/notes/`、`docs/glossary.md`、`questions/mistake-log.md`は、目次や本文の範囲を決める根拠にしない。内容を参照した場合も、必ずAWS公式資料で検証する。
 
@@ -61,6 +62,19 @@ supplimental pageは、同名のliteral pageと同じTask・Skillsを対象に�
 - 対応literal pageの要約を繰り返さず、「知識をどう結び付けて判断するか」に集中する
 - Task・Skillの理解に不要な一般論へ広げない
 
+## service pageの境界
+
+service pageは、同じ試験範囲をAWSサービス単位で引き直し、サービスの役割、主要機能、管理境界、入出力、主要な連携、対応Task・Skillを体系的に説明する。
+
+- [`service-pages/README.md`](service-pages/README.md)の対象サービス、重要度、主要機能サブ目次、対応Taskを基準にする
+- AWS公式資料から確認できる定義、機能、動作、条件、制約だけを書く
+- 各主要機能について、入力、処理、出力、AWSと利用者の管理境界、代表的な連携先を説明する
+- 複数サービスを1ページで扱う場合は、各サービスの責務と相互関係を区別する
+- In-Scope一覧に掲載されていることだけを理由に、試験Taskと無関係な全機能へ広げない
+- Task順の説明をliteral pageから大量に複製しない
+- 独自の推奨、架空シナリオ、試験テクニック、要件からの選定結論は混ぜず、判断が必要な内容は対応supplimental pageへリンクする
+- 料金、Region、Quota、対応Model、API、Engine／Runtime version、提供状況は執筆日に再確認し、確認日と適用条件を書く
+
 ## 日本語と用語
 
 - 結論や全体像を先に示し、その後に詳細を書く
@@ -85,6 +99,7 @@ supplimental pageは、同名のliteral pageと同じTask・Skillsを対象に�
 
 - 原則として1つのTaskにつき、同名のliteral／supplimentalの2ページを1つの「ページペア」とする
 - 執筆エージェントは割り当てられたページペアだけを編集する
+- サービス別執筆は`service-pages/README.md`の予定ファイル1つを1つの「サービスページ」とし、執筆エージェントは割り当てられた1ファイルだけを編集する
 - `README.md`、目次、テンプレート、`AGENTS.md`は統合担当だけが編集する
 - 同じページを複数エージェントが同時に編集しない
 - レビューは対象ページの執筆完了後に行う
@@ -95,11 +110,15 @@ supplimental pageは、同名のliteral pageと同じTask・Skillsを対象に�
 
 - 通常のページペア執筆は`textbook_page_pair_writer`（Sol／medium）を使う
 - ページペアレビューは`textbook_page_pair_reviewer`（Terra／high）を使う
+- 通常のサービスページ執筆は`textbook_service_page_writer`（Sol／medium）を使う
+- サービスページレビューは`textbook_service_page_reviewer`（Terra／high）を使う
 - 全体整合性監査は`textbook_cross_page_auditor`（Luna／medium）を使う
 - レビューが`ESCALATE`と判定した場合だけ、同じページペアを`textbook_page_pair_writer_high`（Sol／high）へ1回だけ再割り当てする
+- サービスページのレビューが`ESCALATE`と判定した場合だけ、同じ1ファイルを`textbook_service_page_writer_high`（Sol／high）へ1回だけ再割り当てする
 - 誤字、リンク切れ、局所的な説明不足など、レビュー担当が安全に直せる問題では昇格しない
 - 昇格後はレビュー担当が再レビューする。再び`ESCALATE`となった場合は自動で繰り返さず、未解決事項としてオーケストレーターへ返す
 - 同じページペアの執筆者、昇格執筆者、レビュー担当を同時に動かさない
+- 同じサービスページの執筆者、昇格執筆者、レビュー担当を同時に動かさない
 
 ## 完了条件
 
@@ -111,3 +130,10 @@ supplimental pageは、同名のliteral pageと同じTask・Skillsを対象に�
 - 必要な図・表には本文の説明がある
 - 相対リンクと外部リンクに明らかな誤りがない
 - 非公開試験問題、認証情報、個人情報を含まない
+
+サービスページでは、上記に加えて次を満たす。
+
+- 目次で指定された対象サービス／機能と主要機能サブ目次を扱っている
+- 各主要機能の入力、処理、出力、管理境界、代表的な連携先を追える
+- 対応Task・Skillsと関連literal／supplimental pageへのリンクがある
+- Task別ページの反復や、試験範囲外の全機能カタログになっていない
